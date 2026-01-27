@@ -18,7 +18,6 @@ const items = Array.from({ length: 20 }, (_, i) => 20 - i);
 </script>
 
 <style is:global>
-
   @property --hue {
     inherits: false;
     initial-value: 0;
@@ -39,12 +38,12 @@ const items = Array.from({ length: 20 }, (_, i) => 20 - i);
     letter-spacing: 0.25vmin;
     position: absolute;
     margin: 0;
-    width: 50%;
     text-align: center;
     top: 50%;
     left: 50%;
     line-height: 0.8;
     color: var(--color);
+    width: 50%;
     font-size: 7vmax;
     transform: translate(-30%, -70%)
       translate(
@@ -53,6 +52,11 @@ const items = Array.from({ length: 20 }, (_, i) => 20 - i);
       );
     -webkit-text-stroke: 1vmin var(--stroke);
     animation: party 1s calc(var(--index) * -0.1s) infinite linear;
+
+    @media (width <= 1111px) and (orientation: portrait) {
+      width: 60%;
+      font-size: 4.4vmax;
+    }
   }
 
   @keyframes party {

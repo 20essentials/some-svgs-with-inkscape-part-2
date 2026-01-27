@@ -11,9 +11,9 @@ export default defineConfig({
 
   //Localhost
   //Deploy normal project
-  // base: '/project-1020/',
-  // site: 'https://20essentials.github.io/project-1020/'
-  site: 'http://localhost:4321/',
+  base: '/some-svgs-with-inkscape-part-2/',
+  site: 'https://20essentials.github.io/some-svgs-with-inkscape-part-2/',
+  // site: 'http://localhost:4321/',
 
   integrations: [react()]
 });
