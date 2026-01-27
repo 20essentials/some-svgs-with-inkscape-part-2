@@ -1,11 +1,12 @@
 ---
+import { TITLE } from '@/utils/data';
 import { baseUrl } from '@/utils/functions';
 const logo = baseUrl('/assets/css-logo.svg');
 ---
 
-<section class="am-hero">
+<section class='am-hero'>
   <h1>
-    20 PROJECTS WITH CSS <img src={logo} alt='Logo' />
+    {TITLE}<img src={logo} alt='Logo' />
   </h1>
 </section>
 <style>
