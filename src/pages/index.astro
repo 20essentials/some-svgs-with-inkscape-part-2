@@ -1,10 +1,12 @@
 ---
 import ContainerCards from '@/components/ContainerCards.astro';
+import { ContainerThreads } from '@/components/ContainerThreads';
 import Hero from '@/components/Hero.astro';
 import Layout from '@/layouts/Layout.astro';
 ---
 
 <Layout>
+  <ContainerThreads client:load />
   <Hero />
   <ContainerCards />
 </Layout>
