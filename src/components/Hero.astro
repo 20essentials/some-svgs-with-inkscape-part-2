@@ -1,18 +1,23 @@
 ---
 import { TITLE } from '@/utils/data';
 import { baseUrl } from '@/utils/functions';
-const logo = baseUrl('/assets/css-logo.svg');
+import Titulo from './titulo.astro';
+const logo = baseUrl('/assets/inkscape-logo-noise.avif');
 ---
 
 <section class='am-hero'>
-  <h1>
+  <!-- <h1>
     {TITLE}<img src={logo} alt='Logo' />
-  </h1>
+  </h1> -->
+  <Titulo />
 </section>
 <style>
   .am-hero {
     height: 100vh;
     position: relative;
+    background: var(--bg);
+    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
   }
 
   h1 {

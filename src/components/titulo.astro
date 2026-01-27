@@ -1,0 +1,62 @@
+---
+import { TITLE } from '@/utils/data';
+
+const items = Array.from({ length: 20 }, (_, i) => 20 - i);
+---
+
+{items.map(index => <h2 style={`--index: ${index};`}>{TITLE}</h2>)}
+
+<script>
+  import gsap from 'gsap';
+
+  document.addEventListener('pointermove', ({ x, y }) => {
+    gsap.set('h2', {
+      '--x': gsap.utils.mapRange(0, window.innerWidth, -10, 10, x),
+      '--y': gsap.utils.mapRange(0, window.innerHeight, -10, 10, y)
+    });
+  });
+</script>
+
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+
+  @property --hue {
+    inherits: false;
+    initial-value: 0;
+    syntax: '<number>';
+  }
+
+  :root {
+    --stroke: hsl(0, 0%, 10%);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  h2 {
+    --color: hsl(var(--hue), 80%, 60%);
+    text-transform: uppercase;
+    font-size: 150px;
+    letter-spacing: 0.25vmin;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    line-height: 0.8;
+    color: var(--color);
+    transform: translate(-30%, -70%)
+      translate(
+        calc(var(--index) * (var(--x, -4) * 1%)),
+        calc(var(--index) * (var(--y, 20) * 1%))
+      );
+    -webkit-text-stroke: 1vmin var(--stroke);
+    animation: party 1s calc(var(--index) * -0.1s) infinite linear;
+  }
+
+  @keyframes party {
+    100% {
+      --hue: 360;
+    }
+  }
+</style>
