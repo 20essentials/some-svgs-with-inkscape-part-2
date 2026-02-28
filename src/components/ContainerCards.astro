@@ -3,19 +3,25 @@ import { arraySvgs } from '@/utils/data';
 ---
 
 <main>
-  {
-    arraySvgs.map(({ url }, i) => (
-      <figure>
-        <img src={url} alt={`Logo ${i + 1}`} />
-        <figcaption>
-          photo by
-          <a href='#' target='_blank'>
-            Jelle van Leest
-          </a>
-        </figcaption>
-      </figure>
-    ))
-  }
+  <main>
+    {
+      arraySvgs.map(({ url }, i) => (
+        <figure>
+          <img
+            src={url}
+            alt={`Logo ${i + 1}`}
+            loading={i > 15 ? 'lazy' : 'eager'}
+          />
+          <figcaption>
+            photo by
+            <a href='#' target='_blank' rel='noopener noreferrer'>
+              Jelle van Leest
+            </a>
+          </figcaption>
+        </figure>
+      ))
+    }
+  </main>
 </main>
 
 <style>
