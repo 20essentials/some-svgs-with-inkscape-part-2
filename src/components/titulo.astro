@@ -7,9 +7,11 @@ const items = Array.from({ length: 20 }, (_, i) => 20 - i);
 {items.map(index => <h2 style={`--index: ${index};`}>{TITLE}</h2>)}
 
 <script>
-  import gsap from 'gsap';
+  import { $ } from '@/utils/functions';
+import gsap from 'gsap';
+  const $hero = $('.am-hero');
 
-  document.addEventListener('pointermove', ({ x, y }) => {
+  $hero.addEventListener('pointermove', ({ x, y }) => {
     gsap.set('h2', {
       '--x': gsap.utils.mapRange(0, window.innerWidth, -10, 10, x),
       '--y': gsap.utils.mapRange(0, window.innerHeight, -10, 10, y)

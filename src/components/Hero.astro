@@ -8,12 +8,16 @@ const logo = baseUrl('/assets/inkscape-logo-noise.avif');
   <a href='https://inkscape.org/'><img src={logo} alt='Logo' class='logo' /></a>
   <Titulo />
 </section>
+
 <style>
   .am-hero {
     height: 100vh;
     position: relative;
+    overflow: hidden;
     background: var(--bg);
     font-family: 'Open Sans', sans-serif;
+    touch-action: pan-y;
+    cursor: pointer;
   }
 
   img.logo {
