@@ -1,5 +1,4 @@
 import { baseUrl } from './functions';
-
 export const TOTAL_SVGS = 107;
 export const arraySvgs = Array.from({ length: TOTAL_SVGS }, (_, i) => ({
   url: baseUrl(`/assets/${i + 1}/${i + 1}.svg`)
