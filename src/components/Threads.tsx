@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Renderer, Program, Mesh, Triangle, Color } from 'ogl';
-
-import './Threads.css';
+import './threads.css';
 
 interface ThreadsProps {
   color?: [number, number, number];
